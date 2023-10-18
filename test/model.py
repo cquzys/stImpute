@@ -130,7 +130,7 @@ class Trans(nn.Module):
         return Y_hat
 
 
-def Model(spatial_df, scrna_df, train_gene, test_gene, save_path_prefix='./stPlus',
+def Model(spatial_df, scrna_df, train_gene, test_gene, save_path_prefix='./result',
           top_k=2000, t_min=5, seed=42, data_quality=None, n_neighbors=50,
            converge_ratio=0.004, max_epoch_num=30, batch_size=512, learning_rate=None, weight_decay=0.0002):
     
