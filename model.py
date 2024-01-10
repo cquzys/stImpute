@@ -145,18 +145,19 @@ def scPread(spatial_df, scrna_df, train_gene, test_gene, seed=42, emb_file=None)
     EM_epochs = 2
     M_epochs = 10
     gnnlayers = 2
-    reliable_epochs = 200
     
     if spatial_df.shape[0] < 1e4 and spatial_df.shape[1] < 5e2:
         n_neighbors = 50
         E_epochs = 10
         hidden_dim = 256
         alpha = .7
+        reliable_epochs = 100
     else:
         n_neighbors = 20
         E_epochs = 50
         hidden_dim = 32
         alpha = .5
+        reliable_epochs = 200
         
     device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
     
