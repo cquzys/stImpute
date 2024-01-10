@@ -1,9 +1,18 @@
 import torch
 import torch.nn as nn
+from torch import Tensor
 from scipy.spatial.distance import cosine
 
-def cal_reliable(spatial_df: torch.FloatTensor, reliable_X: torch.FloatTensor, reliable_test_X: torch.FloatTensor):
+def cal_reliable(spatial_df: Tensor, reliable_X: Tensor, reliable_test_X: Tensor):
 
+    """
+    Args:
+        spatial_df:       [torch.Tensor] normalized and logarithmized original spatial data (cell by gene)
+        reliable_X:       [torch.Tensor] predicted results of the model for train genes (cell by gene)
+        reliable_test_X:  [torch.Tensor] predicted results of the model for test genes (cell by gene)
+    Returns:
+        reliable_score:   [torch.Tensor] predicted test gene's reliable score
+    """
     model = nn.Sequential(
         nn.Linear(reliable_X.shape[0], 256*2),
         nn.ReLU(),
