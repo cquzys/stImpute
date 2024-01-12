@@ -35,7 +35,7 @@ scPread_res, reliable_score = scPread(spatial_df, scrna_df, train_gene, test_gen
 
 ## Reproduce the result of the paper
 
-#### main result
+#### Main result
 
 1. **Change lines 17-19 of train.py** to the address of the dataset you downloaded(The download address for the dataset will be provided later)
 
@@ -45,7 +45,7 @@ sc_adata = sc.read_h5ad('dataset/scRNA-seq/Zeisel.h5ad')
 emb_file = 'embed/osmFISH_emb.pkl' # or set emb_file = None
 ```
 
-2. run train.py
+2. Run train.py
 
 ```python
 python train.py
@@ -53,7 +53,7 @@ python train.py
 
 If you want to accurately reproduce the results in the paper, **use NVIDIA GeForce RTX 4090**
 
-#### the other result
+#### The other result
 
 We provide the full reproduction process [here]() of the other result in the paper(The address will be provided later)
 
