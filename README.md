@@ -55,5 +55,5 @@ If you want to accurately reproduce the results in the paper, **use NVIDIA GeFor
 
 #### the other result
 
-We provide the full reproduction process [here]() of the other data in the paper(The address will be provided later)
+We provide the full reproduction process [here]() of the other result in the paper(The address will be provided later)
 
