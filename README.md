@@ -27,7 +27,7 @@ conda activate scPread_env
 * **scPread_res:**   [pandas dataframe] predicted spatial data (cell by gene)
 * **reliable_score:** [numpy array] predicted gene's reliable score
 
-#### For calling stPlus programmatically
+#### For calling scPread programmatically
 
 ```python
 scPread_res, reliable_score = scPread(spatial_df, scrna_df, train_gene, test_gene, seed=seed, emb_file=emb_file)
