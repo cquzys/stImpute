@@ -1,14 +1,14 @@
-# scPread
+# stImpute
 
-scPread is a novel method that leverages single-cell data to predict authentic spatial transcriptomics data by integrating gene relationships. scPread initiates the process using an autoencoder to create joint embeddings of spatial and single-cell transcriptomics data. These embeddings are then used to identify the nearest neighboring cells in scRNA-seq data for each cell in the spatial transcriptomics dataset. Subsequently, scPread predicts spatial gene expression for each spatial cell using the nearest neighboring cells through a graph neural network (GNN), where nodes represent genes. The gene-to-gene relationships in the GNN are based on cosine similarity, utilizing the pre-trained embeddings of the gene-encoding proteins extracted from the protein language model ESM-2. In addition, scPread is capable of identifying genes that efficiently predict imputation uncertainty, allowing the method to select genes that are reliably imputed.
+stImpute is a novel method that leverages single-cell data to predict authentic spatial transcriptomics data by integrating gene relationships. stImpute initiates the process using an autoencoder to create joint embeddings of spatial and single-cell transcriptomics data. These embeddings are then used to identify the nearest neighboring cells in scRNA-seq data for each cell in the spatial transcriptomics dataset. Subsequently, stImpute predicts spatial gene expression for each spatial cell using the nearest neighboring cells through a graph neural network (GNN), where nodes represent genes. The gene-to-gene relationships in the GNN are based on cosine similarity, utilizing the pre-trained embeddings of the gene-encoding proteins extracted from the protein language model ESM-2. In addition, stImpute is capable of identifying genes that efficiently predict imputation uncertainty, allowing the method to select genes that are reliably imputed.
 
 ## Installation  
 
 We recommend using Anaconda to create a new Python environment and activate it via
 
 ```
-conda env create -f scPread_env.yaml
-conda activate scPread_env
+conda env create -f stImpute_env.yaml
+conda activate stImpute_env
 ```
 
 ## Quick Start
@@ -24,13 +24,13 @@ conda activate scPread_env
 
 #### Output
 
-* **scPread_res:**   [pandas dataframe] predicted spatial data (cell by gene)
+* **stImpute_res:**   [pandas dataframe] predicted spatial data (cell by gene)
 * **reliable_score:** [numpy array] predicted gene's reliable score
 
-#### For calling scPread programmatically
+#### For calling stImpute programmatically
 
 ```python
-scPread_res, reliable_score = scPread(spatial_df, scrna_df, train_gene, test_gene, seed=seed, emb_file=emb_file)
+stImpute_res, reliable_score = stImpute(spatial_df, scrna_df, train_gene, test_gene, seed=seed, emb_file=emb_file)
 ```
 
 ## Reproduce the result of the paper
