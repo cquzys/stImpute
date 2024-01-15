@@ -126,7 +126,7 @@ class Trans(nn.Module):
         return Y_hat
 
 
-def scPread(spatial_df, scrna_df, train_gene, test_gene, seed=42, emb_file=None):
+def stImpute(spatial_df, scrna_df, train_gene, test_gene, seed=42, emb_file=None):
 
     """
     Args:
@@ -137,7 +137,7 @@ def scPread(spatial_df, scrna_df, train_gene, test_gene, seed=42, emb_file=None)
         seed:           [int] random seed in torch
         emb_file:       [str] a file containing the results of gene's coding by esm-2 (or None)
     Returns:
-        scPread_res:    [pandas dataframe] predicted spatial data (cell by gene)
+        stImpute_res:    [pandas dataframe] predicted spatial data (cell by gene)
         reliable_score: [numpy array] predicted gene's reliable score
     """
     
@@ -263,6 +263,6 @@ def scPread(spatial_df, scrna_df, train_gene, test_gene, seed=42, emb_file=None)
     
     pre = preds_test_X[:, len(train_gene):].cpu().numpy()
     mid = mid_ans / mid_ans.max() * pre.max()
-    scPread_res = pre * alpha + mid * (1-alpha)
+    stImpute_res = pre * alpha + mid * (1-alpha)
     
-    return scPread_res, reliable_score
+    return stImpute_res, reliable_score
