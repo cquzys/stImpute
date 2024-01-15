@@ -35,10 +35,10 @@ for train_ind, test_ind in kf.split(raw_shared_gene):
     test_gene  = raw_shared_gene[test_ind]
     spatial_df = raw_spatial_df[train_gene]
     scrna_df   = raw_scrna_df
-    all_pred_res[test_gene], all_reliable_res[test_gene] = scPread(spatial_df, scrna_df, train_gene, test_gene, seed=seed, emb_file=emb_file)
+    all_pred_res[test_gene], all_reliable_res[test_gene] = stImpute(spatial_df, scrna_df, train_gene, test_gene, seed=seed, emb_file=emb_file)
     idx += 1
     
-pickle.dump(all_pred_res, open('scPread.pkl', 'wb'))
+# pickle.dump(all_pred_res, open('stImpute.pkl', 'wb'))
 
 ### Calculating metrics
 print('result: ')
