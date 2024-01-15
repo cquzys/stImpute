@@ -1,4 +1,4 @@
-name: scPread_env
+name: stImpute_env
 channels:
   - defaults
 dependencies:
@@ -167,5 +167,4 @@ dependencies:
     - zarr==2.16.0
     - zict==3.0.0
     - zipp==3.16.2
-prefix: /public/home/syj/anaconda3/envs/scPread_env
-
+prefix: /public/home/syj/anaconda3/envs/stImpute_env
