@@ -42,7 +42,7 @@ stImpute_res, reliable_score = stImpute(spatial_df, scrna_df, train_gene, test_g
 ```python
 st_adata = sc.read_h5ad('dataset/st-seq/osmFISH.h5ad')
 sc_adata = sc.read_h5ad('dataset/scRNA-seq/Zeisel.h5ad')
-emb_file = 'embed/osmFISH_emb.pkl' # or set emb_file = None
+emb_file = 'embed/osmFISH_emb.pkl'
 ```
 
 2. Run train.py
@@ -56,4 +56,26 @@ If you want to accurately reproduce the results in the paper, **use NVIDIA GeFor
 #### The other result
 
 We provide the full reproduction process [here]() of the other result in the paper(The address will be provided later)
+
+## Tutorial
+
+#### Spatial transcriptomic data impute
+
+1. Get the ESM-2 embedding for the genes associated with your dataset, [Tutorial]() (The tutorial will be provided later)
+
+   If you don't want to get the embedding , you can skip this step and set `emb_file = None` in the next step.
+
+2. **Change lines 17-19 of train.py** to the address and the embedding of your dataset
+
+```python
+st_adata = sc.read_h5ad('st_seq_data.h5ad')
+sc_adata = sc.read_h5ad('scRNA_seq_data.h5ad')
+emb_file = 'st_seq_data_emb.pkl' # or set emb_file = None
+```
+
+3. Run train.py
+
+```python
+python train.py
+```
 
