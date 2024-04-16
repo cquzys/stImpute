@@ -20,7 +20,7 @@ conda activate stImpute_env
 * **train_gene:**   [numpy array] genes for training
 * **test_gene:**    [numpy array] genes for predicting
 * **seed:**      [int] random seed in torch
-* **emb_file:**    [str] a file containing the results of gene's coding by esm-2 (or None)
+* **emb_file:**    [str] a file containing the results of gene's coding by ESM-2 (or None)
 
 #### Output
 
