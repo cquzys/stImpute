@@ -70,7 +70,7 @@ We provide the full reproduction process [here]() of the other result in the pap
 ```python
 st_adata = sc.read_h5ad('st_seq_data.h5ad')
 sc_adata = sc.read_h5ad('scRNA_seq_data.h5ad')
-emb_file = 'st_seq_data_emb.pkl' # or set emb_file = None
+emb_file = 'emb.pkl' # or set emb_file = None
 ```
 
 3. Run train.py
