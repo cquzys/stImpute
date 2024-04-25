@@ -61,7 +61,7 @@ We provide the full reproduction process [here]() of the other result in the pap
 
 #### Spatial transcriptomic data impute
 
-1. Get the ESM-2 embedding for the genes associated with your dataset, tutorial is [here](https://github.com/cquzys/stImpute/blob/main/tutorial/esm-2_tutorial.pdf) 
+1. Get the ESM-2 embedding for the genes associated with your dataset, tutorial is [esm-2_tutorial.ipynb](https://github.com/cquzys/stImpute/blob/main/tutorial/esm-2_tutorial.ipynb) 
 
    If you don't want to get the embedding , you can skip this step and set `emb_file = None` in the next step.
 
