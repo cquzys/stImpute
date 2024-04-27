@@ -61,11 +61,12 @@ We provide the full reproduction process [here]() of the other result in the pap
 
 #### Spatial transcriptomic data impute
 
-1. Get the ESM-2 embedding for the genes associated with your dataset, tutorial is [esm-2_tutorial.ipynb](https://github.com/cquzys/stImpute/blob/main/tutorial/esm-2_tutorial.ipynb) 
+1. Install the required environment according to [stImpute Installation](https://github.com/cquzys/stImpute/?tab=readme-ov-file#installation).
+   
+2. Get the ESM-2 embedding for the genes associated with your dataset.
+   If you don't want to get the embedding, you can skip this step and set `emb_file = None` in the next step.
 
-   If you don't want to get the embedding , you can skip this step and set `emb_file = None` in the next step.
-
-2. **Change lines 17-19 of train.py** to the address and the embedding of your dataset
+3. **Change lines 17-19 of train.py** to the address and the embedding of your dataset.
 
 ```python
 st_adata = sc.read_h5ad('st_seq_data.h5ad')
@@ -73,9 +74,12 @@ sc_adata = sc.read_h5ad('scRNA_seq_data.h5ad')
 emb_file = 'emb.pkl' # or set emb_file = None
 ```
 
-3. Run train.py
+4. Run train.py
 
 ```python
 python train.py
 ```
+
+Or you can run the tutorial [tutorial.ipynb](https://github.com/cquzys/stImpute/blob/main/tutorial/esm-2_tutorial.ipynb) for more detailed information.
+
 
