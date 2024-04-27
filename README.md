@@ -81,6 +81,6 @@ emb_file = 'emb.pkl' # or set emb_file = None
 python train.py
 ```
 
-You can also run the tutorial [tutorial.ipynb](https://github.com/cquzys/stImpute/blob/main/tutorial/tutorial.ipynb) for more detailed information.
+You can also run the tutorial [tutorial.ipynb](https://github.com/cquzys/stImpute/main/tutorial.ipynb) for more detailed information.
 
 
